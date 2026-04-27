@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Summer Portfolio</title>
+    <!-- Google Fonts for a premium feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy color management */
+        :root {
+            --pastel-blue: #D6EAF8;
+            --soft-blue: #AED6F1;
+            --deep-blue: #5DADE2;
+            --grass-green: #E8F8F5;
+            --text-dark: #2E4053;
+            --white-glass: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--pastel-blue);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(214, 234, 248, 0.4), rgba(214, 234, 248, 0.4)), 
+                        url('C:/Users/HP/.gemini/antigravity/brain/dcbed968-9b5c-435e-8958-2c9d68150577/summer_birds_bg_png_1777258802009.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            animation: fadeInUp 1s ease-out;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            animation: fadeInUp 1.5s ease-out;
+            opacity: 0.8;
+        }
+
+        /* Bird Animation Wrapper */
+        .bird-container {
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            animation: flyAcross 15s linear infinite;
+            pointer-events: none;
+        }
+
+        .bird {
+            width: 50px;
+            height: 30px;
+            fill: var(--deep-blue);
+            opacity: 0.7;
+        }
+
+        /* Glassmorphism Section */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 40px;
+            background: var(--white-glass);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--deep-blue);
+            border-left: 5px solid var(--soft-blue);
+            padding-left: 15px;
+        }
+
+        /* Cards with Hover Effects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(174, 214, 241, 0.4);
+            border: 1px solid var(--soft-blue);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes flyAcross {
+            0% { left: -10%; top: 20%; }
+            50% { top: 15%; }
+            100% { left: 110%; top: 25%; }
+        }
+
+        /* Interaction Elements */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--deep-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #3498DB;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <!-- Animated Bird -->
+        <div class="bird-container">
+            <svg class="bird" viewBox="0 0 512 512">
+                <path d="M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zm-128-48c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32zm-128 0c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32zm-128 0c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"/>
+                <!-- Simple bird wing flap shape -->
+                <path d="M256 320c-40 0-80-20-100-50 20 10 50 20 100 20s80-10 100-20c-20 30-60 50-100 50z" fill="white"/>
+            </svg>
+        </div>
+
+        <h1>Hello, I'm [Your Name]</h1>
+        <p>A Developer who loves Summer & Blue Skies</p>
+        <a href="#about" class="btn">Explore My World</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="about">
+        <section>
+            <h2>About Me</h2>
+            <p>I am a beginner developer who enjoys creating beautiful and simple things. This portfolio is inspired by the grace of a summer breeze and the freedom of birds in a blue sky.</p>
+            
+            <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3 style="color: var(--deep-blue); margin-bottom: 10px;">My Hobbies</h3>
+                    <ul style="list-style: none;">
+                        <li>🎨 Digital Art & Design</li>
+                        <li>🌱 Gardening in the Summer</li>
+                        <li>📸 Nature Photography</li>
+                        <li>💻 Learning New Code</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--deep-blue); margin-bottom: 10px;">Education</h3>
+                    <p><strong>Bachelor of Computer Science</strong><br>
+                    [Your University Name]<br>
+                    [Year - Year]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="social">
+            <h2>Connect With Me</h2>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="https://instagram.com/yourusername" class="btn" style="background: #E1306C;">Instagram</a>
+                <a href="https://linkedin.com/in/yourusername" class="btn" style="background: #0077B5;">LinkedIn</a>
+                <a href="https://github.com/yourusername" class="btn" style="background: #333;">GitHub</a>
+            </div>
+        </section>
+
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>Summer App</h3>
+                    <p>A simple application that tracks sunny days and suggests outdoor activities.</p>
+                </div>
+                <div class="card">
+                    <h3>Blue Sky Journal</h3>
+                    <p>A minimalist writing space to capture your thoughts and ideas under a digital sky.</p>
+                </div>
+                <div class="card">
+                    <h3>Bird Watcher</h3>
+                    <p>Learn more about local birds and how they fly with this interactive guide.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you want to say hello or work together, feel free to reach out!</p>
+            <a href="mailto:hello@example.com" class="btn">Send a Message</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 [Your Name]. Created with ❤️ and Summer Vibes.</p>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Smooth reveal animation on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.8s ease-out';
+                observer.observe(section);
+            });
+
+            // Click effect on cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    alert('You clicked on a project! This is where you can show more details.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
